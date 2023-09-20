@@ -30,6 +30,7 @@ export const signup = async(req,res,next)=>{
         return res.status(400).json({message : "User Already Exists! Login Instead"})
     }
     const hashedPassword = bcrypt.hashSync(password)//hashing the password
+
     //creating new user
     const user=new User({
         name,

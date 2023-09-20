@@ -2,21 +2,21 @@ import mongoose from "mongoose";
 
 const Schema = mongoose.Schema;
 
-const projectSchema = new Schema({
-    title:{
+const projectHistorySchema = new Schema({
+    name:{
         type:String,
     },
     description:{
         type:String,
     },
-    reference:{
-        type:String,
-    },
-    user:{
+    client:{
         type:mongoose.Types.ObjectId,
-        ref:"User",
-        required:true
+        ref:"client"
     },
+    startDate:{
+        type:String
+    }
+
 })
 
-export default mongoose.model("projectHistory",projectSchema)
+export default mongoose.model("projectHistory",projectHistorySchema)

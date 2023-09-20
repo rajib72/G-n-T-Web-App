@@ -17,13 +17,19 @@ const userSchema = new Schema({
         required:true,
         minlength:6
     },
-    project:[{
-        type:mongoose.Types.ObjectId,
-        ref:"projectHistory"
+    // projectHistory:[{
+    //     type:mongoose.Types.ObjectId,
+    //     ref:"projectHistory"
+    // }],
+    // timesheet:[{
+    //     type:mongoose.Types.ObjectId,
+    //     ref:"timeSheet"
+    // }],
+    client:[{
+        type:String,
     }],
-    timesheet:[{
-        type:mongoose.Types.ObjectId,
-        ref:"timeSheet"
+    staff:[{
+        type:String,
     }]
 })
 
