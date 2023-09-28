@@ -12,7 +12,7 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:5000/api/user/login',{email,password})
+        axios.post('https://gntbackend.onrender.com/api/user/login',{email,password})
         .then(result =>{
             console.log(result);
             if(result.status===200){

@@ -12,7 +12,7 @@ function Signup(){
     const navigate=useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:5000/api/user/signup',{name,email,password})
+        axios.post('https://gntbackend.onrender.com/api/user/signup',{name,email,password})
         .then(result =>{
             console.log(result);
             if(result.status===200){

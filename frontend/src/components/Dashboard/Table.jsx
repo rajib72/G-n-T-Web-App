@@ -16,7 +16,7 @@ const [data, setData] = useState([]); // Use state to store the data
 
   useEffect(() => {
     // Fetch data when the component mounts
-    axios.get('http://localhost:5000/api/sfcall')
+    axios.get('https://gntbackend.onrender.com/api/sfcall')
       .then(result => {
         setData(result.data); 
       })
