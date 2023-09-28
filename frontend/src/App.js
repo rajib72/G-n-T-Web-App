@@ -5,8 +5,9 @@ import Auth from "./components/Auth"
 import { useSelector } from "react-redux";
 import Login from "./components/Login";
 import Signup from './components/Signup.jsx';
-import Dashboard from './components/Dashboard.jsx'
+import Dashboard from './components/Dashboard/Dashboard.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path="/login" element={<Auth />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
+        <ToastContainer position="top-right" autoClose={4000} hideProgressBar={false} />
       </main>
     </React.Fragment>
   );

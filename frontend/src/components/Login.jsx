@@ -2,21 +2,30 @@ import React from 'react'
 import { Link,useNavigate } from "react-router-dom";
 import axios from 'axios'
 import { useState } from "react";
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [email,setEmail]=useState()
     const [password,setPassword]=useState()
     const navigate=useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault()
         axios.post('http://localhost:5000/api/user/login',{email,password})
         .then(result =>{
             console.log(result);
             if(result.status===200){
+                toast.success('Login successful!');
                 navigate('/dashboard');
+            }else{
+                toast.warning('Wrong Details!')
             }
         })
-        .catch(err=> console.log(err))
+        .catch(err=> {
+            console.log("login error ",err)
+            toast.error('Login failed. Please check your credentials.');  
+        })
     }
     return (
     <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">

@@ -28,7 +28,7 @@ Salesforce.get("/", (req, res) => {
      ChikPeaSSB__Descriptions__c FROM ChikPeaSSB__Project_Phases__r),(SELECT Id,ChikPeaSSB__Phase_Name__c,\
      Name,ChikPeaSSB__Item__r.Id,ChikPeaSSB__Item__r.Name,ChikPeaSSB__Estimated_Hours__c,\
      ChikPeaSSB__Actual_Hours__c,ChikPeaSSB__Remaining_Hours__c,ChikPeaSSB__Staff__r.Name,\
-     ChikPeaSSB__Staff__r.Id FROM ChikPeaSSB__Resources__r) FROM ChikPeaSSB__Chikpea_Project__c limit 1",
+     ChikPeaSSB__Staff__r.Id FROM ChikPeaSSB__Resources__r) FROM ChikPeaSSB__Chikpea_Project__c",
     (err, result) => {
       if (err) {
         res.send(err);

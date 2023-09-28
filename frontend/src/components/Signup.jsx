@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 function Signup(){
     const [name,setName]=useState()
@@ -14,6 +16,7 @@ function Signup(){
         .then(result =>{
             console.log(result);
             if(result.status===200){
+                toast.success('Signup successful!');
                 navigate('/');
             }
         })
